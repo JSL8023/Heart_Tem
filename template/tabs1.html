@@ -1,0 +1,53 @@
+
+<ion-side-menus>
+	<!--目录两边-->
+	<ion-side-menu side="right" width="300">
+		<ion-content class="royal-bg">
+		<ion-list type="card">
+			<ion-item ui-sref="tabs.tab1">tab1</ion-item>
+			<ion-item ui-sref="tabs.tab2">tab2</ion-item>
+			<ion-item ui-sref="tabs.tab3">tab3</ion-item>
+			<ion-item ui-sref="start">come_back</ion-item>
+		</ion-list>
+
+		</ion-content>
+	</ion-side-menu>
+
+	<ion-side-menu-content drag-content="true">
+	
+	<ion-nav-bar class="bar-positive" >
+		<ion-nav-back-button></ion-nav-back-button>
+	</ion-nav-bar>
+	<ion-tabs class="tabs-positive tabs-striped tabs-icon-top qing">
+		<!--1-->
+		<ion-tab icon-on="ion-ios-pulse-strong" icon-off="ion-ios-pulse" title="自测" ui-sref="tabs.tab1" nav-direction="forward">
+			<ion-nav-view name="tabs-mytab1"></ion-nav-view>
+		</ion-tab>
+		<!--2-->
+		<ion-tab icon-on="ion-ios-heart" icon-off="ion-ios-heart-outline" title="日记" ui-sref="tabs.tab2" nav-direction="forward">
+		
+			<ion-nav-view name="tabs-mytab2"></ion-nav-view>
+		</ion-tab>
+		<!--3-->
+		<ion-tab icon-on="ion-ios-book" icon-off="ion-ios-book-outline" title="百科" ui-sref="tabs.tab3" nav-direction="forward">
+			<ion-nav-view name="tabs-mytab3"></ion-nav-view>
+		</ion-tab>
+		<!--4-->
+		<ion-tab icon-on="ion-ios-chatbubble" icon-off="ion-ios-chatbubble-outline" title="交流" ui-sref="tabs.tab4" nav-direction="forward">
+			<ion-nav-view name="tabs-mytab4"></ion-nav-view>
+		</ion-tab>
+		<!--5-->
+		<ion-tab icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline" ng-click="toggle()" title="我的" nav-direction="forward">
+		</ion-tab>
+	</ion-tabs>
+
+
+	</ion-side-menu-content>
+
+	<!--<ion-side-menu side="right"></ion-side-menu>-->
+</ion-side-menus>
+
+
+<style type="text/css">
+
+</style>

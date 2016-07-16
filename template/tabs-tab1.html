@@ -1,0 +1,53 @@
+			<ion-view view-title="情绪自测">
+				<ion-content>
+					<ion-list>
+						<ion-item class="item bg_head" ui-sref="tabs.tab1content({num:190})"></ion-item>
+						<ion-item class="item item-thumbnail-left" href="#/tabs/tab1content/1">
+							<img src="img/f0.png"/>
+							<p>我是否心情郁闷?</p>
+							<p>健康问卷，建议{{data}}再测试</p>	
+						</ion-item>
+						<ion-item class="item item-thumbnail-left" href="#/tabs/tab1content/3">
+							<img src="img/f1.png"/>
+							<p>我是否心情焦躁?</p>
+							<p>焦虑情绪自测，建议{{data}}再测试</p>
+						</ion-item>
+						<ion-item class="item item-thumbnail-left" href="#/tabs/tab1content/2">
+							<img src="img/f-2.png"/>
+							<p>你是否幸福依然?</p>
+							<p>生活质量自测，赶紧测试一下吧！</p>
+						</ion-item>
+						<ion-item class="item item-thumbnail-left" href="#/tabs/tab1content/2">
+							<img src="img/f-1.png"/>
+							<p>看看我“快乐”吗?</p>
+							<p>双相障碍倾向（躁狂）自测，赶紧测试一下吧！</p>
+						</ion-item>
+						<ion-item class="item item-thumbnail-left" href="#/tabs/tab1content/2">
+							<img src="img/f2.png"/>
+							<p>测测我的“好”心情?</p>
+							<p>双相障碍倾向（轻躁狂）自测，赶紧测试一下吧！</p>
+						</ion-item>
+					</ion-list>
+				</ion-content>
+				<style type="text/css">
+					.bg_head{
+						background: url(img/xk.jpg);
+						background-size:100% 100%;
+						height: 200px;
+					}
+					.item-content{
+						background: none !important;
+					}
+					
+					ion-item{
+						text-align: left;
+					}
+					ion-item p{
+						line-height: 26px;
+					}
+					ion-item p:nth-of-type(2){
+						color: #999;
+						font-size: 12px;
+					}
+				</style>
+			</ion-view>

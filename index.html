@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<title>滑动</title>
+	<meta charset="utf-8" name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width,height=device-height">
+    <script src="ionic/js/ionic.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="ionic/css/ionic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <meta charset="utf-8">
+</head>
+<body ng-controller="main">
+
+	<ion-nav-view ></ion-nav-view>
+</body>
+</html>
+
+	<script>
+	var m1 = angular.module("myapp",["ionic"]);
+	m1.config(['$stateProvider',"$urlRouterProvider","$ionicConfigProvider",function($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
+		$ionicConfigProvider.tabs.position("bottom")
+		
+		$stateProvider.state("tabs",{
+//			选显卡+两边目录
+			url:"/tabs",
+			abstract:true,
+			templateUrl:"template/tabs.html"
+		}).state("tabs.tab1",{
+//			页面1
+			url:"/tab1",
+			views:{
+				"tabs-mytab1":{
+					templateUrl:"template/tabs-tab1.html"
+				}
+			}
+		}).state("tabs.tab2",{
+			//			页面2
+			url:"/tab2",
+			views:{
+				"tabs-mytab2":{
+					templateUrl:"template/tabs-tab2.html"
+				}
+			}
+		}).state("tabs.tab3",{
+			//			页面3
+			url:"/tab3",
+			views:{
+				"tabs-mytab3":{
+					templateUrl:"template/tabs-tab3.html"
+				}
+			}
+		}).state("tabs.tab4",{
+			//			页面4
+			url:"/tab4",
+			views:{
+				"tabs-mytab4":{
+					templateUrl:"template/tabs-tab4.html"
+				}
+			}
+		}).state("tabs.tab5",{
+			//			页面5
+			url:"/tab5",
+			views:{
+				"tabs-mytab5":{
+					templateUrl:"template/tabs-tab5.html"
+				}
+			}
+		}).state("tabs.tab1content",{
+//			问卷
+			url:"/tab1content/:num",
+			views:{
+				"tabs-mytab1":{
+					templateUrl:"template/tabs-content.html",
+					controller:"contentController"
+				}
+			}
+		}).state("tabs.dati",{
+			url:"/dati/:num",
+			views:{
+				"tabs-mytab1":{
+					templateUrl:"template/test.html",
+					controller:"contentController"
+				}
+			}
+		}).state("start",{
+//			开始动画
+			url:"/start",
+			templateUrl:"template/start.html"
+		})
+
+	}])
+	m1.controller('main', ['$scope',"$ionicSideMenuDelegate","$ionicSlideBoxDelegate","$state" ,function($scope,$ionicSideMenuDelegate,$ionicSlideBoxDelegate,$state){
+		$state.go("start");
+		
+		$scope.jump=function(index){
+			$ionicSlideBoxDelegate.select(index);
+		}
+		
+		$scope.changePage = function(){
+			$state.go("tabs.tab1");
+		}
+		
+		$scope.toggle=function(){
+			$ionicSideMenuDelegate.toggleRight(true);
+		}
+
+	}])
+
+	m1.controller('contentController', ['$scope',"$stateParams" ,function($scope,$stateParams){
+		$scope.myparam =$stateParams.num;
+	}])
+
+
+	m1.controller()
+	</script>
